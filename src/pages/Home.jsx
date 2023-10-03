@@ -28,7 +28,7 @@ const Home = () => {
     fetchReciters();
   }, []);
   return (
-    <Card className="flex flex-col gap-6">
+    <Card className="h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] flex flex-col gap-6">
       <SearchBar
         placeholder="ابحث عن قارئ.."
         value={searchValue}
@@ -36,7 +36,7 @@ const Home = () => {
         containerClass="max-w-sm"
         inputClass="h-10 rounded-md"
       />
-      <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4">
+      <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {loading ? (
           <div className="">Loading</div>
         ) : (
