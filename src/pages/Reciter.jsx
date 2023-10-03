@@ -14,6 +14,10 @@ const Reciter = () => {
   useEffect(() => {
     const fetchReciter = async () => {
       try {
+        const de = await axios.get(
+          "https://api.alquran.cloud/v1/quran/quran-uthmani"
+        );
+        console.log(de);
         const response = await axios.get(
           `https://www.mp3quran.net/api/v3/reciters?reciter=${id}`
         );
