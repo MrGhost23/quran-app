@@ -25,7 +25,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pt-3 h-0 py-8">
+      <ul className="grid grid-cols-1 md:grid-cols-2 max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4 px-4 pt-3 h-0 py-8">
         {loading ? (
           <div className="">Loading</div>
         ) : (
