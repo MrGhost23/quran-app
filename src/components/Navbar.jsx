@@ -3,6 +3,7 @@ import { Fragment, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { links } from "../utils/links";
 import { FaBars } from "react-icons/fa6";
+import { navLinks } from "../data/navLinks";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,46 +23,17 @@ const Navbar = () => {
           } lg:static lg:h-fit lg:contents lg:p-0 lg:bg-transparent lg:shadow-none lg:translate-x-0`}
         >
           <ul className="ml-auto flex flex-col lg:flex-row lg:items-center justify-center gap-2 lg:gap-4 font-semibold text-xl">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                isActive ? "text-green-600" : "text-gray-400"
-              }
-            >
-              قرآن
-            </NavLink>
-            <NavLink
-              to="/hadith"
-              className={({ isActive }) =>
-                isActive ? "text-green-600" : "text-gray-400"
-              }
-            >
-              الأحاديث
-            </NavLink>
-            <NavLink
-              to="/pray"
-              className={({ isActive }) =>
-                isActive ? "text-green-600" : "text-gray-400"
-              }
-            >
-              مواعيد الصلاة
-            </NavLink>
-            <NavLink
-              to="/hisn"
-              className={({ isActive }) =>
-                isActive ? "text-green-600" : "text-gray-400"
-              }
-            >
-              حصن المسلم
-            </NavLink>
-            <NavLink
-              to="/favorites"
-              className={({ isActive }) =>
-                isActive ? "text-green-600" : "text-gray-400"
-              }
-            >
-              المفضلة
-            </NavLink>
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.id}
+                to={link.path}
+                className={({ isActive }) =>
+                  isActive ? "text-green-600" : "text-gray-400"
+                }
+              >
+                {link.label}
+              </NavLink>
+            ))}
           </ul>
 
           <IoClose
