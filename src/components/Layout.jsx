@@ -1,4 +1,5 @@
 import { Outlet } from "react-router-dom";
+import Aside from "./Aside";
 
 const Layout = () => {
   return (
@@ -6,7 +7,9 @@ const Layout = () => {
       <div className="col-span-3">
         <Outlet />
       </div>
-      <div className="col-span-1 md:h-auto">right side</div>
+      <div className="col-span-1 md:h-auto">
+        <Aside />
+      </div>
     </div>
   );
 };
