@@ -1,7 +1,6 @@
 import { IoClose } from "react-icons/io5";
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { links } from "../utils/links";
 import { FaBars } from "react-icons/fa6";
 import { navLinks } from "../data/navLinks";
 
