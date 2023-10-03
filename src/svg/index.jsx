@@ -1,7 +1,7 @@
 import AzanImg from "../assets/azan.png";
 
 export const Azan = () => {
-  return <img src={AzanImg} className="w-2/5" alt="Pray Image" />;
+  return <img src={AzanImg} className="w-1/5 lg:w-2/5" alt="Pray Image" />;
 };
 
 export const IconLogo = ({ style }) => {
