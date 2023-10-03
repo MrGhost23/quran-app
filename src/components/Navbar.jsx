@@ -22,11 +22,46 @@ const Navbar = () => {
           } lg:static lg:h-fit lg:contents lg:p-0 lg:bg-transparent lg:shadow-none lg:translate-x-0`}
         >
           <ul className="ml-auto flex flex-col lg:flex-row lg:items-center justify-center gap-2 lg:gap-4 font-semibold text-xl">
-            <li className="relative inline-block text-green-600">قرآن</li>
-            <li className="relative inline-block">الأحاديث</li>
-            <li className="relative inline-block">مواعيد الصلاة</li>
-            <li className="relative inline-block">حصن المسلم</li>
-            <li className="relative inline-block">المفضلة</li>
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-400"
+              }
+            >
+              قرآن
+            </NavLink>
+            <NavLink
+              to="/hadith"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-400"
+              }
+            >
+              الأحاديث
+            </NavLink>
+            <NavLink
+              to="/pray"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-400"
+              }
+            >
+              مواعيد الصلاة
+            </NavLink>
+            <NavLink
+              to="/hisn"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-400"
+              }
+            >
+              حصن المسلم
+            </NavLink>
+            <NavLink
+              to="/favorites"
+              className={({ isActive }) =>
+                isActive ? "text-green-600" : "text-gray-400"
+              }
+            >
+              المفضلة
+            </NavLink>
           </ul>
 
           <IoClose
