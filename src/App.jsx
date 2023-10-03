@@ -3,6 +3,10 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Reciters from "./pages/Reciters";
 import Layout from "./components/Layout";
+import Hadith from "./pages/Hadith";
+import Pray from "./pages/Pray";
+import Hisn from "./pages/Hisn";
+import Favorites from "./pages/Favorites";
 
 const App = () => {
   return (
@@ -13,7 +17,10 @@ const App = () => {
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
             <Route path="/:id" element={<Reciters />} />
-            <Route path="/quran" element={<div>quran</div>} />
+            <Route path="/hadith" element={<Hadith />} />
+            <Route path="/pray" element={<Pray />} />
+            <Route path="/hisn" element={<Hisn />} />
+            <Route path="/favorites" element={<Favorites />} />
           </Route>
         </Routes>
       </BrowserRouter>
