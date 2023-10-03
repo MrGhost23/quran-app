@@ -26,6 +26,7 @@ const Navbar = () => {
               <NavLink
                 key={link.id}
                 to={link.path}
+                onClick={() => setIsOpen(false)}
                 className={({ isActive }) =>
                   isActive ? "text-green-600" : "text-gray-400"
                 }
