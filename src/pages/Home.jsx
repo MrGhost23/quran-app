@@ -34,16 +34,14 @@ const Home = () => {
               className="flex bg-white flex-grow justify-between p-2 rounded-2xl py-4 items-center"
               key={reciter.id}
             >
-              <div className="number bg-green-200 text-green-600 p-1 rounded-full">
+              <div className="number -mt-4 bg-green-200 text-green-600 p-1 rounded-full">
                 {reciter.id}
               </div>
               <h2 className="text-lg cursor-pointer font-medium">
                 {reciter.name}
               </h2>
-              <div className="fav-icon">
-                <div className="cursor-pointer text-lg text-green-600">
-                  <FaHeart />
-                </div>
+              <div className="cursor-pointer -mt-4 text-lg text-green-600">
+                <FaHeart />
               </div>
             </div>
           ))
