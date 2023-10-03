@@ -1,6 +1,6 @@
 import { IoClose } from "react-icons/io5";
 import { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { links } from "../utils/links";
 import { FaBars } from "react-icons/fa6";
 
@@ -11,7 +11,9 @@ const Navbar = () => {
     <header className="bg-white pb-7">
       <div className="container mx-auto px-4 py-6 flex items-center">
         <div className="ml-auto md:w-48 flex-shrink-0">
-          <p className="text-green-600 text-3xl font-bold">قرآن</p>
+          <Link className="text-green-600 text-3xl font-bold" to="/">
+            قرآن
+          </Link>
         </div>
 
         <nav
