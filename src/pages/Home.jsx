@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
-import { FaHeart } from "react-icons/fa6";
 import ScrollableDiv from "../ui/ScrollableDiv";
 import Wrapper from "../ui/Wrapper";
 import Card from "../ui/Card";
