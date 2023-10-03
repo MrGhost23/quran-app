@@ -26,7 +26,7 @@ const Home = () => {
   }, []);
   return (
     <div className="px-3 py-5 bg-[#ECF0F4] rounded-lg">
-      <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4">
+      <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4">
         {loading ? (
           <div className="">Loading</div>
         ) : (
