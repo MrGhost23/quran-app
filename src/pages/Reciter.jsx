@@ -2,8 +2,11 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { FaHeart } from "react-icons/fa6";
 import { useParams } from "react-router-dom";
+import Card from "../ui/Card";
+import Wrapper from "../ui/Wrapper";
+import ScrollableDiv from "../ui/ScrollableDiv";
 
-const Reciters = () => {
+const Reciter = () => {
   const { id } = useParams();
   const [reciter, setReciter] = useState({});
   const [loading, setLoading] = useState(true);
@@ -40,22 +43,19 @@ const Reciters = () => {
   }, [id]);
 
   return (
-    <div>
-      {loading ? (
-        <p>Loading...</p>
-      ) : (
-        <div className="surah col-span-3 sm:col-span-4 md:col-span-4 bg-white m-2 flex-grow">
-          <h2 className="surah-name text-lg cursor-pointer">اسم</h2>
-          <div className="fav-icon">
-            <div className="heart cursor-pointer">
-              <FaHeart />
-            </div>
-            <div className="number">1</div>
-          </div>
-        </div>
-      )}
-    </div>
+    <Wrapper>
+      <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4">
+        {" "}
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          reciter.surah_list.map((surah) => (
+            <Card key={surah.id} id={surah.id} name={surah.name_arabic} />
+          ))
+        )}
+      </ScrollableDiv>
+    </Wrapper>
   );
 };
 
-export default Reciters;
+export default Reciter;

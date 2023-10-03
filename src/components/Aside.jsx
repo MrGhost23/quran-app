@@ -29,7 +29,7 @@ const Aside = () => {
       <div className="flex flex-col md:flex-row lg:flex-col gap-10">
         <div className="relative flex-1">
           <h6 className="text-green-600 mb-2 font-medium">اخر قراءة</h6>
-          <h5 className="text-gray-600">لا يوجد</h5>
+          <h5 className="text-gray-600 font-medium">لا يوجد</h5>
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
             <IconBook style={bodyIconStyles} />
           </div>
@@ -37,7 +37,7 @@ const Aside = () => {
 
         <div className="relative flex-1">
           <h6 className="text-green-600 mb-2 font-medium">اخر ما استمعت</h6>
-          <h5 className="text-gray-600">لا يوجد</h5>
+          <h5 className="text-gray-600 font-medium">لا يوجد</h5>
           <div className="absolute top-1/2 left-0 transform -translate-y-1/2">
             <IconListen style={bodyIconStyles} />
           </div>

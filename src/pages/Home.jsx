@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { FaHeart } from "react-icons/fa6";
 import ScrollableDiv from "../ui/ScrollableDiv";
+import Wrapper from "../ui/Wrapper";
 import Card from "../ui/Card";
 import SearchBar from "../ui/SearchBar";
 
@@ -28,7 +29,7 @@ const Home = () => {
     fetchReciters();
   }, []);
   return (
-    <Card className="h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] flex flex-col gap-6">
+    <Wrapper className="h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] flex flex-col gap-6">
       <SearchBar
         placeholder="ابحث عن قارئ.."
         value={searchValue}
@@ -42,25 +43,12 @@ const Home = () => {
         ) : (
           <>
             {reciters.map((reciter) => (
-              <div
-                className="flex bg-white flex-grow justify-between p-2 rounded-2xl py-4 items-center"
-                key={reciter.id}
-              >
-                <div className="number -mt-4 bg-green-200 text-green-600 p-1 rounded-full">
-                  {reciter.id}
-                </div>
-                <h2 className="text-lg cursor-pointer font-medium">
-                  {reciter.name}
-                </h2>
-                <div className="cursor-pointer -mt-4 text-lg text-green-600">
-                  <FaHeart />
-                </div>
-              </div>
+              <Card key={reciter.id} id={reciter.id} name={reciter.name} />
             ))}
           </>
         )}
       </ScrollableDiv>
-    </Card>
+    </Wrapper>
   );
 };
 export default Home;

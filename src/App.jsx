@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
-import Reciters from "./pages/Reciters";
+import Reciter from "./pages/Reciter";
 import Layout from "./components/Layout";
 import Hadith from "./pages/Hadith";
 import Pray from "./pages/Pray";
@@ -16,7 +16,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Home />} />
-            <Route path="/:id" element={<Reciters />} />
+            <Route path="/:id" element={<Reciter />} />
             <Route path="/hadith" element={<Hadith />} />
             <Route path="/pray" element={<Pray />} />
             <Route path="/hisn" element={<Hisn />} />
