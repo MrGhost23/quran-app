@@ -6,7 +6,7 @@ import { FaBars } from "react-icons/fa6";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <header className="bg-white shadow-sm">
+    <header className="bg-white pb-7">
       <div className="container mx-auto px-4 py-6 flex items-center">
         <div className="ml-auto md:w-48 flex-shrink-0">
           <p className="text-green-600 text-3xl font-bold">قرآن</p>
@@ -29,7 +29,6 @@ const Navbar = () => {
           <FaBars />
         </li>
       </div>
-      <hr />
     </header>
   );
 };
