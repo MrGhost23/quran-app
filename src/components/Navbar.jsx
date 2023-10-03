@@ -37,12 +37,12 @@ const Navbar = () => {
           </ul>
 
           <IoClose
-            className="absolute top-9 right-8 lg:hidden text-2xl cursor-pointer transition duration-500 hover:text-green-600 hover:scale-110"
+            className="absolute top-9 right-8 lg:hidden text-2xl text-gray-600 cursor-pointer transition duration-500 hover:text-green-600 hover:scale-110"
             onClick={() => setIsOpen(false)}
           />
         </nav>
         <li className="lg:hidden flex" onClick={() => setIsOpen(true)}>
-          <FaBars className="text-xl cursor-pointer transition duration-500 hover:text-green-600 hover:scale-110" />
+          <FaBars className="text-xl text-gray-600 cursor-pointer transition duration-500 hover:text-green-600 hover:scale-110" />
         </li>
       </div>
     </header>
