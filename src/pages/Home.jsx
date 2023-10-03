@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
+import ScrollableDiv from "../ui/ScrollableDiv";
 
 const Home = () => {
   const [reciters, setReciters] = useState([]);
@@ -24,8 +25,8 @@ const Home = () => {
     fetchReciters();
   }, []);
   return (
-    <div>
-      <ul className="grid grid-cols-1 md:grid-cols-2 max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4 px-4 pt-3 h-0 py-8">
+    <div className="px-3 py-5 bg-[#ECF0F4] rounded-lg">
+      <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4">
         {loading ? (
           <div className="">Loading</div>
         ) : (
@@ -46,7 +47,7 @@ const Home = () => {
             </div>
           ))
         )}
-      </ul>
+      </ScrollableDiv>
     </div>
   );
 };
