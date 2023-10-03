@@ -6,18 +6,18 @@ import Card from "../ui/Card";
 import SearchBar from "../ui/SearchBar";
 
 const Home = () => {
-  const [reciters, setReciters] = useState([]);
+  const [chapters, setChapters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
     const fetchReciters = async () => {
       try {
-        const response = await axios.get(
-          "https://www.mp3quran.net/api/v3/reciters"
+        const surahResponse = await axios.get(
+          "https://api.quran.com/api/v4/chapters"
         );
-        setReciters(response.data.reciters);
-        console.log(response.data.reciters);
+        setChapters(surahResponse.data.chapters);
+        console.log(surahResponse.data.chapters);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching reciters:", error);
@@ -30,7 +30,7 @@ const Home = () => {
   return (
     <Wrapper className="h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] flex flex-col gap-6">
       <SearchBar
-        placeholder="ابحث عن قارئ.."
+        placeholder="ابحث عن سورة.."
         value={searchValue}
         onSearch={(e) => setSearchValue(e.target.value)}
         containerClass="max-w-sm"
@@ -41,8 +41,12 @@ const Home = () => {
           <div className="">Loading</div>
         ) : (
           <>
-            {reciters.map((reciter) => (
-              <Card key={reciter.id} id={reciter.id} name={reciter.name} />
+            {chapters.map((chapter) => (
+              <Card
+                key={chapter.id}
+                id={chapter.id}
+                name={chapter.name_arabic}
+              />
             ))}
           </>
         )}
