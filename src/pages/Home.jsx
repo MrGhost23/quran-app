@@ -3,8 +3,8 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa6";
 import ScrollableDiv from "../ui/ScrollableDiv";
+import Wrapper from "../ui/Wrapper";
 import Card from "../ui/Card";
-import Search from "../ui/Search";
 
 const Home = () => {
   const [reciters, setReciters] = useState([]);
@@ -27,33 +27,19 @@ const Home = () => {
     fetchReciters();
   }, []);
   return (
-    <Card>
+    <Wrapper>
       <ScrollableDiv className="grid grid-cols-1 md:grid-cols-2 h-[calc(90vh-112px)] max-h-[calc(90vh-112px)] lg:grid-cols-3 gap-4">
         {loading ? (
           <div className="">Loading</div>
         ) : (
           <>
-            <div className="w-full mb-4">Search</div>
             {reciters.map((reciter) => (
-              <div
-                className="flex bg-white flex-grow justify-between p-2 rounded-2xl py-4 items-center"
-                key={reciter.id}
-              >
-                <div className="number -mt-4 bg-green-200 text-green-600 p-1 rounded-full">
-                  {reciter.id}
-                </div>
-                <h2 className="text-lg cursor-pointer font-medium">
-                  {reciter.name}
-                </h2>
-                <div className="cursor-pointer -mt-4 text-lg text-green-600">
-                  <FaHeart />
-                </div>
-              </div>
+              <Card key={reciter.id} id={reciter.id} name={reciter.name} />
             ))}
           </>
         )}
       </ScrollableDiv>
-    </Card>
+    </Wrapper>
   );
 };
 export default Home;
